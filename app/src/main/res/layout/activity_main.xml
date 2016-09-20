@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8aba6"
+    android:orientation="vertical"
+    tools:context="com.example.maqingwei.animationday01.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Tween动画 :"
+        android:textColor="#ffffff" />
+
+
+    <RadioGroup
+        android:id="@+id/groupbtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="alpha" />
+
+        <RadioButton
+            android:id="@+id/scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scale" />
+
+        <RadioButton
+            android:id="@+id/rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rotate" />
+
+        <RadioButton
+            android:id="@+id/translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translate" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/showimageview"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/bb" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+
+        android:background="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+
+        android:text="帧动画 :"
+        android:textColor="#ffffff" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="走路"
+            android:id="@+id/walkbtn"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跑步"
+            android:id="@+id/runbtn"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="旋转"
+            android:id="@+id/rotatebtn"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画"
+            android:id="@+id/propertyani"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/walkimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/runimg"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/rotateImg"
+            android:layout_width="50dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/rotate"
+            android:layout_height="50dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
