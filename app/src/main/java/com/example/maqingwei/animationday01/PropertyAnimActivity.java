@@ -1,14 +1,17 @@
 package com.example.maqingwei.animationday01;
 
 import android.animation.AnimatorSet;
+import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 
 /*
@@ -20,6 +23,10 @@ public class PropertyAnimActivity extends AppCompatActivity implements View.OnCl
     private ImageView mPropertyImg;
     private Button mTranslate, mScale, mRotate, mAlpha, mCombine, mColor;
 
+    private ViewGroup mGroup;
+    private LayoutTransition trasion;
+    private GridLayout grid;
+    int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +43,16 @@ public class PropertyAnimActivity extends AppCompatActivity implements View.OnCl
         mTranslate = (Button) findViewById(R.id.ptranslate);
         mCombine = (Button) findViewById(R.id.combine);
         mColor = (Button) findViewById(R.id.color);
+        mGroup = (ViewGroup) findViewById(R.id.llgropu);
+        grid = new GridLayout(this);
+        grid.setColumnCount(5);
+        mGroup.addView(grid);
+        trasion = new LayoutTransition();
 
+
+
+        findViewById(R.id.delbtn).setOnClickListener(this);
+        findViewById(R.id.addbtn).setOnClickListener(this);
         mColor.setOnClickListener(this);
         mCombine.setOnClickListener(this);
         mAlpha.setOnClickListener(this);
@@ -94,6 +110,24 @@ public class PropertyAnimActivity extends AppCompatActivity implements View.OnCl
 
                 propertyHolder();
                 break;
+
+            case  R.id.addbtn:
+
+              final   Button btn = new Button(this);
+                trasion.setAnimator(LayoutTransition.APPEARING, ObjectAnimator.ofFloat(btn,"scaleY",1,0).setDuration(2000));
+                btn.setText(++count+"");
+                mGroup.setLayoutTransition(trasion);
+                grid.addView(btn);
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        grid.removeView(btn);
+                    }
+                });
+                break;
+
+
+
         }
     }
     //将多个ObjectAnimator组合在一起,可调整动画执行顺序或者一起执行
